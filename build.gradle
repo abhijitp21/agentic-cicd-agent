@@ -16,6 +16,7 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation  'org.springframework:spring-webflux'
     implementation 'com.github.langchain4j:langchain4j:0.28.0'
     compileOnly 'org.projectlombok:lombok:1.18.30' // Use the latest version
     annotationProcessor 'org.projectlombok:lombok:1.18.30'
