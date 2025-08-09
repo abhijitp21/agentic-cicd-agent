@@ -1,5 +1,6 @@
 package com.agentic.cicd.service;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.web.reactive.function.client.WebClient;
 import com.agentic.cicd.model.WorkflowRun;
@@ -9,9 +10,13 @@ import java.util.Map;
 
 public class GitHubService {
 
+    @Value("${github.token}")
+    private String token;
+
+    @Value("${github.repository}")
+    private String repo;
+
     private final WebClient webClient;
-    private final String token = "YOUR_GITHUB_TOKEN";
-    private final String repo = "YOUR_ORG/YOUR_REPO";
 
     public GitHubService() {
         this.webClient = WebClient.builder()
